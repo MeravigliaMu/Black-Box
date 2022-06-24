@@ -1,0 +1,35 @@
+<!-- 用户信息区域 -->
+<view class="userInfoContainer">
+  <image src="{{userInfo?userInfo.avatarUrl:'https://z3.ax1x.com/2021/06/15/2qPZQ0.png'}}" class="avatar" bindtap="getUserProfile"></image>
+  <view class="usernameContainer">
+    <text class="username" bindtap="getUserProfile">{{userInfo?userInfo.nickName:'未登录'}}</text>
+    <text class="count">累计任务数量:{{count}}</text>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+<van-tabbar active="{{activeBar}}" bind:change="onChange" placeholder active-color="#597ef7">
+  <van-tabbar-item name="index">
+    <van-icon name="home-o" size="60rpx"></van-icon>
+  </van-tabbar-item>
+  <van-tabbar-item name="addTask">
+    <van-icon name="add-o" size="60rpx"></van-icon>
+  </van-tabbar-item>
+  <van-tabbar-item name="personal">
+    <van-icon name="contact" size="60rpx"></van-icon>
+  </van-tabbar-item>
+</van-tabbar>
+
+<van-dialog use-slot id="van-dialog">
+  <image src="../../static/img/QrCode.png" show-menu-by-longpress mode="aspectFit" />
+</van-dialog>
+
+<van-toast id="van-toast" />
